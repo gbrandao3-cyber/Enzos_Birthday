@@ -371,10 +371,10 @@
 <!-- Photos Modal -->
 <div class="modal-overlay center" id="photoModal"><div class="modal-backdrop" onclick="closePhotos()"></div><div class="modal-panel" style="max-width:420px;"><button class="modal-close" onclick="closePhotos()">✕</button><div class="modal-title">Enzo's Gallery 🌟</div><div class="photo-grid">
   <!-- Placeholders updated with actual GitHub URLs -->
-  <img src="https://raw.githubusercontent.com/gbrandao3-cyber/Lola-s-Bday/main/IMG_1164.jpeg" onclick="openFullPhoto(this.src)" alt="Enzo"/>
-  <img src="https://raw.githubusercontent.com/gbrandao3-cyber/Lola-s-Bday/main/IMG_1243.jpeg" onclick="openFullPhoto(this.src)" alt="Enzo"/>
-  <img src="https://raw.githubusercontent.com/gbrandao3-cyber/Lola-s-Bday/main/IMG_1341.jpeg" onclick="openFullPhoto(this.src)" alt="Enzo"/>
-  <img src="https://raw.githubusercontent.com/gbrandao3-cyber/Lola-s-Bday/main/IMG_1538.jpeg" onclick="openFullPhoto(this.src)" alt="Enzo"/>
+  <img src="https://raw.githubusercontent.com/gbrandao3-cyber/Enzos_Birthday/a0da17f68bba10d1a294890cb7ae9907202af674/IMG_1164.jpeg" onclick="openFullPhoto(this.src)" alt="Enzo"/>
+  <img src="https://raw.githubusercontent.com/gbrandao3-cyber/Enzos_Birthday/a0da17f68bba10d1a294890cb7ae9907202af674/IMG_1243.jpeg" onclick="openFullPhoto(this.src)" alt="Enzo"/>
+  <img src="https://raw.githubusercontent.com/gbrandao3-cyber/Enzos_Birthday/a0da17f68bba10d1a294890cb7ae9907202af674/IMG_1341.jpeg" onclick="openFullPhoto(this.src)" alt="Enzo"/>
+  <img src="https://raw.githubusercontent.com/gbrandao3-cyber/Enzos_Birthday/a0da17f68bba10d1a294890cb7ae9907202af674/IMG_1538.jpeg" onclick="openFullPhoto(this.src)" alt="Enzo"/>
 </div></div></div>
 <div id="fullPhotoModal" onclick="closeFullPhoto()"><img id="fullPhotoImg" src="" alt="Enzo"/><button id="fullPhotoClose" onclick="closeFullPhoto()">✕</button></div>
 
@@ -411,7 +411,7 @@
     if (attending === 'Yes') {
       showStep('rsvpStepGuests');
     } else {
-      submitToGoogle({ tab: 'Enzo_RSVP', name: currentGuestName, attending: 'No', guests: 0 });
+      submitToGoogle({ name: currentGuestName, attending: 'No', guests: 0 });
       document.getElementById('noMsg').textContent = `Thanks for letting us know, ${currentGuestName}. We hope to celebrate with you another time! 🌳`;
       showStep('rsvpStepNo');
     }
@@ -421,7 +421,7 @@
     document.getElementById('guestCount').textContent = guestCount;
   }
   function submitRsvp() {
-    submitToGoogle({ tab: 'Enzo_RSVP', name: currentGuestName, attending: 'Yes', guests: guestCount });
+    submitToGoogle({ name: currentGuestName, attending: 'Yes', guests: guestCount });
     document.getElementById('confirmMsg').textContent = `${currentGuestName}, you're bringing ${guestCount} ${guestCount === 1 ? 'guest' : 'guests'} — we can't wait to celebrate with you! ⚽🎊`;
     showStep('rsvpStepSuccess');
   }
@@ -442,8 +442,7 @@
     container.innerHTML = '<p style="text-align:center; color:#999;">Loading live scores... ⚽</p>';
     showModal('leaderboardModal');
 
-    // Fetch now includes the tab parameter for the leaderboard
-    fetch(SCRIPT_URL + '?tab=Enzo_Leaderboard&t=' + new Date().getTime())
+    fetch(SCRIPT_URL + '?t=' + new Date().getTime())
       .then(r => r.json())
       .then(data => {
         container.innerHTML = '';
@@ -468,7 +467,7 @@
     const name = document.getElementById('scoreNameInput').value.trim();
     if(!name) { alert("Please enter your name!"); return; }
     
-    submitToGoogle({ tab: 'Enzo_Leaderboard', name: name, score: score });
+    submitToGoogle({ name: name, score: score });
     hideModal('gameOverModal');
     setTimeout(() => openLeaderboard(), 500); 
   }
