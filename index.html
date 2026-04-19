@@ -247,7 +247,7 @@
       <div class="detail-icon">📅</div>
       <div style="flex:1">
         <span class="detail-label">Date & Time — Tap to Save</span>
-        <div class="detail-value">April 23rd<br>10:00 AM onwards</div>
+        <div class="detail-value">April 25th<br>3:00 PM onwards</div>
       </div>
       <div style="font-size:18px; align-self:center; opacity:0.5;">›</div>
     </div>
@@ -267,10 +267,13 @@
         <span class="detail-label">Birthday Wish List</span>
         <div class="detail-value">
           <ul style="list-style:none; padding:0; margin:4px 0 0; display:flex; flex-direction:column; gap:6px; font-size:14px;">
-            <li>✨ Soccer gear & balls</li>
-            <li>🧩 Age-appropriate puzzles</li>
-            <li>📚 Fun storybooks</li>
-            <li>👕 Clothes (Size 2T/3T)</li>
+            <li>✨ Tonies for Toniebox</li>
+            <li>⚽ Soccer gear & balls</li>
+            <li>🧱 Toddler LEGOs</li>
+            <li>🏀 Other ball sport toys</li>
+            <li>🧢 Summer hat</li>
+            <li>🧥 Light zip-down/rain jacket</li>
+            <li>💰 529 contribution: <br><a href="https://ugift529.com/readysave529/U48-K08.html" target="_blank" style="color:#1976D2; text-decoration:underline; font-weight:800;">Click here to Gift</a></li>
           </ul>
         </div>
       </div>
@@ -367,11 +370,11 @@
 <div class="modal-overlay" id="mapsModal"><div class="modal-backdrop" onclick="closeMaps()"></div><div class="modal-panel"><button class="modal-close" onclick="closeMaps()">✕</button><div class="modal-title">Get Directions 📍</div><button class="modal-btn" onclick="openGoogleMap()"><span style="font-size:24px;">🗺️</span> Google Maps</button><button class="modal-btn" onclick="openAppleMap()"><span style="font-size:24px;">🍎</span> Apple Maps</button></div></div>
 <!-- Photos Modal -->
 <div class="modal-overlay center" id="photoModal"><div class="modal-backdrop" onclick="closePhotos()"></div><div class="modal-panel" style="max-width:420px;"><button class="modal-close" onclick="closePhotos()">✕</button><div class="modal-title">Enzo's Gallery 🌟</div><div class="photo-grid">
-  <!-- Placeholders ready for GitHub URLs -->
-  <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%23e0e0e0'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' font-family='sans-serif' font-size='12' fill='%23999'>Photo 1</text></svg>" onclick="openFullPhoto(this.src)" alt="Enzo Placeholder"/>
-  <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%23e0e0e0'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' font-family='sans-serif' font-size='12' fill='%23999'>Photo 2</text></svg>" onclick="openFullPhoto(this.src)" alt="Enzo Placeholder"/>
-  <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%23e0e0e0'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' font-family='sans-serif' font-size='12' fill='%23999'>Photo 3</text></svg>" onclick="openFullPhoto(this.src)" alt="Enzo Placeholder"/>
-  <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%23e0e0e0'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' font-family='sans-serif' font-size='12' fill='%23999'>Photo 4</text></svg>" onclick="openFullPhoto(this.src)" alt="Enzo Placeholder"/>
+  <!-- Placeholders updated with actual GitHub URLs -->
+  <img src="https://raw.githubusercontent.com/gbrandao3-cyber/Lola-s-Bday/main/IMG_1164.jpeg" onclick="openFullPhoto(this.src)" alt="Enzo"/>
+  <img src="https://raw.githubusercontent.com/gbrandao3-cyber/Lola-s-Bday/main/IMG_1243.jpeg" onclick="openFullPhoto(this.src)" alt="Enzo"/>
+  <img src="https://raw.githubusercontent.com/gbrandao3-cyber/Lola-s-Bday/main/IMG_1341.jpeg" onclick="openFullPhoto(this.src)" alt="Enzo"/>
+  <img src="https://raw.githubusercontent.com/gbrandao3-cyber/Lola-s-Bday/main/IMG_1538.jpeg" onclick="openFullPhoto(this.src)" alt="Enzo"/>
 </div></div></div>
 <div id="fullPhotoModal" onclick="closeFullPhoto()"><img id="fullPhotoImg" src="" alt="Enzo"/><button id="fullPhotoClose" onclick="closeFullPhoto()">✕</button></div>
 
@@ -379,8 +382,7 @@
 
 <script>
   // ── APP SETTINGS ──
-  // Placeholder Google Script URL. Update this with your actual deployment URL when ready.
-  const SCRIPT_URL = 'https://script.google.com/macros/s/YOUR_SCRIPT_ID_HERE/exec'; 
+  const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxX9Lw6fmiyJzrruBmOMt2pFHa2F1n8qsEQoj6lN0jTMBIhhjKVHR-VPExbqwCvh1E/exec'; 
   const ADDRESS = 'Mountain+Park+Park+5050+Five+Forks+Trickum+Road+Lilburn';
   let guestCount = 1;
   let currentGuestName = "";
@@ -409,7 +411,7 @@
     if (attending === 'Yes') {
       showStep('rsvpStepGuests');
     } else {
-      submitToGoogle({ name: currentGuestName, attending: 'No', guests: 0 });
+      submitToGoogle({ tab: 'Enzo_RSVP', name: currentGuestName, attending: 'No', guests: 0 });
       document.getElementById('noMsg').textContent = `Thanks for letting us know, ${currentGuestName}. We hope to celebrate with you another time! 🌳`;
       showStep('rsvpStepNo');
     }
@@ -419,15 +421,13 @@
     document.getElementById('guestCount').textContent = guestCount;
   }
   function submitRsvp() {
-    submitToGoogle({ name: currentGuestName, attending: 'Yes', guests: guestCount });
+    submitToGoogle({ tab: 'Enzo_RSVP', name: currentGuestName, attending: 'Yes', guests: guestCount });
     document.getElementById('confirmMsg').textContent = `${currentGuestName}, you're bringing ${guestCount} ${guestCount === 1 ? 'guest' : 'guests'} — we can't wait to celebrate with you! ⚽🎊`;
     showStep('rsvpStepSuccess');
   }
 
   // ── Google API Request ──
   function submitToGoogle(data) {
-    // Fails silently if no valid script URL is set, which is fine for the placeholder phase.
-    if(SCRIPT_URL.includes("YOUR_SCRIPT_ID_HERE")) return;
     fetch(SCRIPT_URL, {
       method: 'POST',
       mode: 'no-cors',
@@ -442,12 +442,8 @@
     container.innerHTML = '<p style="text-align:center; color:#999;">Loading live scores... ⚽</p>';
     showModal('leaderboardModal');
 
-    if(SCRIPT_URL.includes("YOUR_SCRIPT_ID_HERE")) {
-        container.innerHTML = '<p style="text-align:center; color:#999;">Leaderboard will be active once connected to Google Sheets! 🏆</p>';
-        return;
-    }
-
-    fetch(SCRIPT_URL + '?t=' + new Date().getTime())
+    // Fetch now includes the tab parameter for the leaderboard
+    fetch(SCRIPT_URL + '?tab=Enzo_Leaderboard&t=' + new Date().getTime())
       .then(r => r.json())
       .then(data => {
         container.innerHTML = '';
@@ -472,7 +468,7 @@
     const name = document.getElementById('scoreNameInput').value.trim();
     if(!name) { alert("Please enter your name!"); return; }
     
-    submitToGoogle({ name: name, score: score });
+    submitToGoogle({ tab: 'Enzo_Leaderboard', name: name, score: score });
     hideModal('gameOverModal');
     setTimeout(() => openLeaderboard(), 500); 
   }
@@ -487,11 +483,11 @@
   function openCalendar() { showModal('calModal'); }
   function closeCalendar() { hideModal('calModal'); }
   function openGoogleCal() { 
-    window.location.href = 'https://calendar.google.com/calendar/render?action=TEMPLATE&text=Enzo%27s+2nd+Birthday+Party+%E2%9A%BD&dates=20260423T140000Z/20260423T170000Z&details=Soccer+Park+Party+%F0%9F%8C%B3&location=Mountain+Park+Park,+5050+Five+Forks+Trickum+Road,+Lilburn'; 
+    window.location.href = 'https://calendar.google.com/calendar/render?action=TEMPLATE&text=Enzo%27s+2nd+Birthday+Party+%E2%9A%BD&dates=20260425T190000Z/20260425T220000Z&details=Soccer+Park+Party+%F0%9F%8C%B3&location=Mountain+Park+Park,+5050+Five+Forks+Trickum+Road,+Lilburn'; 
     closeCalendar(); 
   }
   function openAppleCal() {
-    const ics = ['BEGIN:VCALENDAR','VERSION:2.0','BEGIN:VEVENT','DTSTART:20260423T140000Z','DTEND:20260423T170000Z',"SUMMARY:Enzo's 2nd Birthday Party ⚽",'DESCRIPTION:Soccer Park Party 🌳','LOCATION:Mountain Park Park, 5050 Five Forks Trickum Road, Lilburn','END:VEVENT','END:VCALENDAR'].join('\n');
+    const ics = ['BEGIN:VCALENDAR','VERSION:2.0','BEGIN:VEVENT','DTSTART:20260425T190000Z','DTEND:20260425T220000Z',"SUMMARY:Enzo's 2nd Birthday Party ⚽",'DESCRIPTION:Soccer Park Party 🌳','LOCATION:Mountain Park Park, 5050 Five Forks Trickum Road, Lilburn','END:VEVENT','END:VCALENDAR'].join('\n');
     const a = document.createElement('a');
     a.href = URL.createObjectURL(new Blob([ics], { type: 'text/calendar' })); a.download = 'enzos-bday-party.ics'; a.click(); closeCalendar();
   }
